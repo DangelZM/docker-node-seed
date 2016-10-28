@@ -9,13 +9,14 @@ services:
   #   links:
   #     - mongo
   # mongo:
-  #   image: mongo
+  #   image: mongo:3.0.4
   #   ports:
   #     - "27017:27017"
   #   volumes_from:
   #     - mongodata
+  #   command: --smallfiles --rest
   # mongodata:
-  #    image: tianon/true
+  #    image: mongo:3.0.4
   #    volumes:
   #      - /data/db
-  #    command: echo 'Data container for Auth_MongoDB'
+  #    command: --break-mongo
